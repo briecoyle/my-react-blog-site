@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :destroy]
+  before_action :set_post, only: [:show, :update, :destroy]
   def index
     render json: Post.all
   end
@@ -29,10 +29,10 @@ class Api::PostsController < ApplicationController
     if @post.destroy
       render status: 204
     else
-      render json: { message: "Unable to remove this post" }, 400
+      render json: { message: "Unable to remove this post" }, status: 400
     end
   end
-    
+
   private
 
   def set_post
