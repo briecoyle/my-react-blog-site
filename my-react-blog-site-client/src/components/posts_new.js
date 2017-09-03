@@ -11,6 +11,7 @@ class PostsNew extends Component {
           type={field.type}
           {...field.input}
         />
+        {field.meta.error}
       </div>
     )
   }
