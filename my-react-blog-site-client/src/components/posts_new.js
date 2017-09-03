@@ -3,15 +3,19 @@ import { Field, reduxForm } from 'redux-form';
 
 class PostsNew extends Component {
   renderField(field) {
+    const { meta: {touched, error } } = field;
+    const className =  `form-group ${touched && error ? 'has-danger' : ''}`
     return (
-      <div className="form-group">
+      <div className = {className}>
         <label>{field.label}</label>
         <input
-        className="form-control"
-          type={field.type}
+          className = "form-control"
+          type = {field.type}
           {...field.input}
         />
-        {field.meta.error}
+        <div className = 'text-help'>
+          {touched ? error : ''}
+        </div>
       </div>
     )
   }
@@ -26,26 +30,26 @@ class PostsNew extends Component {
     return (
       <div>
         <h3>New Post</h3>
-        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+        <form onSubmit = { handleSubmit(this.onSubmit.bind(this))}>
           <Field
-            label='Title'
-            name='title'
-            type='text'
-            component={this.renderField}
+            label = 'Title'
+            name = 'title'
+            type = 'text'
+            component = { this.renderField }
           />
           <Field
-            label='Categories'
-            name='categories'
-            type='text'
-            component={this.renderField}
+            label = 'Categories'
+            name = 'categories'
+            type = 'text'
+            component = { this.renderField }
           />
           <Field
-            label='Content'
-            name='content'
-            type='text'
-            component={this.renderField}
+            label = 'Content'
+            name = 'content'
+            type = 'text'
+            component = { this.renderField }
           />
-          <button type='submit' className='btn btn-primary'>Submit</button>
+          <button type = 'submit' className = 'btn btn-primary'>Submit</button>
         </form>
       </div>
     )
@@ -65,7 +69,4 @@ function validate(values) {
   return errors;
 }
 
-export default reduxForm({
-  validate,
-  form: 'PostsNewForm'
-})(PostsNew);
+export default reduxForm({ validate, form: 'PostsNewForm' })(PostsNew);
