@@ -7,7 +7,6 @@ import promise from 'redux-promise';
 
 import PostsIndex from './components/posts_index';
 import PostsNew from './components/posts_new';
-import './index.css';
 import reducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 
