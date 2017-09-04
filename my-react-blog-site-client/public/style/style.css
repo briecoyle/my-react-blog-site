@@ -35,3 +35,7 @@ body {
 form a {
   margin-left: 5px;
 }
+
+p {
+  text-align: left;
+}
