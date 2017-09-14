@@ -39,3 +39,37 @@ form a {
 p {
   text-align: left;
 }
+
+nav {
+  height: 44px;
+  background-color: #eee;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+nav div {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.first-link {
+  position: absolute;
+  bottom: 3px;
+  right: 120px;
+}
+
+.second-link {
+  position: absolute;
+  bottom: 3px;
+  right: 2px;
+}
+
+.logo {
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  font-size: 28px;
+  font-style: italic;
+  color: #0275D8;
+}
