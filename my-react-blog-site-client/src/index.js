@@ -17,6 +17,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <div className="App">
+        <NavBar />
         <Switch>
           <Route path='/posts/new' component={PostsNew}/>
           <Route path='/posts/:id' component={PostsShow}/>
