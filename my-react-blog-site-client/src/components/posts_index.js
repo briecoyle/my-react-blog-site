@@ -3,6 +3,7 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchPosts } from '../actions';
+import UpVoteCounter from './upvote_counter';
 
 class PostsIndex extends Component {
   componentDidMount() {
@@ -14,6 +15,7 @@ class PostsIndex extends Component {
       return (
         <li className='list-group-item' key={post.id}>
           <Link to={`/posts/${post.id}`}>{post.title}</Link>
+          <UpVoteCounter />
         </li>
       )
     })
