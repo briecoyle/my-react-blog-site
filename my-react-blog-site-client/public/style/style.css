@@ -42,7 +42,6 @@ p {
 
 nav {
   height: 44px;
-  background-color: #eee;
   margin-bottom: 10px;
   padding-bottom: 10px;
   position: relative;
@@ -66,10 +65,10 @@ nav div {
 }
 
 .logo {
+  font-family: 'Pacifico', cursive;
   position: absolute;
   bottom: 3px;
   left: 0;
   font-size: 28px;
-  font-style: italic;
   color: #0275D8;
 }
